@@ -71,8 +71,14 @@ export class QuestionComponent implements OnInit {
   answer(currentquestion: number, opt: string) {
 
     if (currentquestion === this.questionList.length) {
-        this.points = this.points + 5;
-        this.isquizecompleted = true;
+      if (opt === this.answerList[this.currentquestion].ans) {
+                this.points = this.points + 5;
+                this.isquizecompleted = true;
+      }
+      else{
+        this.points = this.points;
+          this.isquizecompleted = true;
+      }
        }
     //console.log(currentquestion, opt, this.answerList);
    // console.log(opt, 'opt');
